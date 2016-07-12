@@ -1,0 +1,86 @@
+<html>
+<!DOCTYPE html>    
+    <head>
+   		<title> Jquery Work - 1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Bootstrap Main CSS -->
+        <link href="css/bootstrap.css" rel="stylesheet"> 
+
+        <!-- Custom CSS -->
+        <link href="css/custom.css" rel="stylesheet">  
+
+        <!-- Include JQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap main javascript -->
+        <script src="js/bootstrap.js"></script>
+
+        <script>
+
+            $(document).ready(function() {
+                $('#tooltip1').tooltip('hide');
+                $('#tooltip2').tooltip('hide');      
+
+                /* Adding user defined jQuery starts here */
+                $('#panel-1').slideToggle('700').delay('1000').slideToggle('800');
+                $('#panel-2').delay('1000').slideToggle('700');
+                $('#panel-3').fadeToggle('700').delay('1000').fadeToggle('1000');
+
+				$('#panel-4-body').html('This content is changed. Look for the actual content in the code.');
+				/* You can use any id such as panel-4. Using that will change the entire panel with your new content inside. Example: html('You text goes here')*/
+
+            });
+        </script>
+
+
+<body>
+	<div class="container">
+			<div class="jumbotron">
+					<h2>Basic Panel and jQuery.<small> None of these buttons work</small></h2>
+			<button class="btn btn-info" id="btn-1"> Button 1</button>	
+			<button class="btn btn-info" id="btn-2"> Button 2</button>	
+			<button class="btn btn-info" id="btn-3"> Button 3</button>
+		<!--	Button as link using a href
+		<a href="" class="btn btn-link"> Link </a> -->
+			</div>
+	
+			<div class="row">
+			<div class="col-lg-4">
+				<div class="panel panel-primary" id="panel-1">
+					<div class="panel-heading"> Head 1</div>
+					<div class="panel-body"> Body 1 goes here</div>
+				</div>
+
+			</div>
+			<div class="col-lg-4">
+				<div class="panel panel-success" id="panel-2">
+					<div class="panel-heading"> Head 2</div>
+					<div class="panel-body"> Body 2 goes here </div>
+				</div>
+
+			</div>
+			<div class="col-lg-4">
+				<div class="panel panel-info" id="panel-3">
+					<div class="panel-heading"> Head 3</div>
+					<div class="panel-body"> Body 3 goes here</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4">
+				<div class="panel panel-primary" id="panel-4">
+					<div class="panel-heading"> Head 4</div>
+					<div class="panel-body" id="panel-4-body"> Body 4 goes here</div>
+				</div>
+
+			</div>
+			
+
+
+	</div>
+
+
+	</div>
+
+</body>
+</html>

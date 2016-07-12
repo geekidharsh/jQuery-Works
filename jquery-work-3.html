@@ -1,0 +1,170 @@
+<html>
+<!DOCTYPE html>    
+    <head>
+   		<title> Jquery Work - 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Bootstrap Main CSS -->
+        <link href="css/bootstrap.css" rel="stylesheet"> 
+
+        <!-- Custom CSS -->
+        <link href="css/custom.css" rel="stylesheet">  
+
+        <!-- Include JQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap main javascript -->
+        <script src="js/bootstrap.js"></script>
+
+        <script>
+
+            $(document).ready(function() {
+
+                $('#tooltip1').tooltip('hide');
+                $('#tooltip2').tooltip('hide');      
+
+                /* Adding user defined jQuery events starts here */
+                $('#btn-1').on('click', function() {
+					 $('#panel-1').slideToggle('700').delay('1000');
+                });
+
+                $('#btn-2').on('click', function() {
+					 $('#panel-2').slideToggle('700').delay('1000');
+                });
+
+                $('#btn-3').on('click', function() {
+					 $('#panel-3').slideToggle('700').delay('1000');
+                });
+
+                $('#btn-4').on('mouseover', function() {
+						$('#panel-4-body').html('This content is changed. Click again hide this content.');
+				/* You can use any id such as panel-4. Using that will change the entire panel with your new content inside. Example: html('You text goes here')*/
+                });
+
+                $('#btn-4').on('click', function() {
+						$('#panel-4-body').slideToggle('1000');
+                });
+
+                /* Mouseover button events using jQuery*/
+                $('#btn-5').on('mouseover', function() {
+						$('#panel-5-body').slideToggle('500');
+                });
+ 				
+ 				$('#btn-6').on('mouseover', function() {
+						$('#panel-6-body').slideToggle('500');
+                }); 
+
+                $('#btn-7').on('mouseover', function() {
+						$('#panel-7-body').slideToggle('500');
+                }); 
+
+                $('#btn-8').on('mouseover', function() {
+						$('#panel-8-body').slideToggle('500');
+                });
+
+
+
+
+           }); /* ready ends here */
+
+        </script>
+    </head>
+
+
+<body>
+	<div class="container">
+			<div class="jumbotron">
+					<h2>Basic Panel and jQuery.</h2>
+					<h3>Description<small> Same as jQuery Work - 2 but with using a much smarter and better way to code. </small></h3>
+					<br>
+					<button class="btn btn-info" id="btn-1"> Button 1</button>	
+					<button class="btn btn-info" id="btn-2"> Button 2</button>	
+					<button class="btn btn-info" id="btn-3"> Button 3</button>
+					<button class="btn btn-info" id="btn-4"> Button 4</button>
+					<br><br>
+					<!--	By the way: Button as link using a href
+				<a href="" class="btn btn-link"> Link </a> -->
+					<button class="btn btn-info" id="btn-5"> Move</button>	
+					<button class="btn btn-info" id="btn-6"> Across</button>	
+					<button class="btn btn-info" id="btn-7"> These</button>
+					<button class="btn btn-info" id="btn-8"> Buttons</button>
+					
+			</div>
+
+	
+	<div class="row">
+			<div class="col-lg-3">
+				<div class="panel panel-primary" id="panel-1">
+					<div class="panel-heading"> Head 1</div>
+					<div class="panel-body"> Body 1 goes here</div>
+				</div>
+
+			</div>
+			<div class="col-lg-3">
+				<div class="panel panel-success" id="panel-2">
+					<div class="panel-heading"> Head 2</div>
+					<div class="panel-body"> Body 2 goes here </div>
+				</div>
+
+			</div>
+			<div class="col-lg-3">
+				<div class="panel panel-info" id="panel-3">
+					<div class="panel-heading"> Head 3</div>
+					<div class="panel-body"> Body 3 goes here</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3">
+				<div class="panel panel-primary" id="panel-4">
+					<div class="panel-heading"> Head 4</div>
+					<div class="panel-body" id="panel-4-body"> Go ahead and hover on to Button 4. Also click the rest.</div>
+				</div>
+			</div>
+			
+			<!-- the panels below will do something else. -->
+
+			<div class="col-lg-3">
+				<div class="panel panel-info" id="panel-5">
+					<div class="panel-heading"> Head 5</div>
+					<div class="panel-body" id="panel-5-body"> Body 5.</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3">
+				<div class="panel panel-info" id="panel-6">
+					<div class="panel-heading"> Head 6</div>
+					<div class="panel-body" id="panel-6-body"> Body 6.</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3">
+				<div class="panel panel-info" id="panel-7">
+					<div class="panel-heading"> Head 7</div>
+					<div class="panel-body" id="panel-7-body"> Body 7.</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3">
+				<div class="panel panel-info" id="panel-8">
+					<div class="panel-heading"> Head 8</div>
+					<div class="panel-body" id="panel-8-body"> Body 8.</div>
+				</div>
+			</div>
+
+
+			<div class="col-xs-12">
+				<p><mark>Code summary: </mark> 
+	   					 <code>'on'</code>
+						 <code>'click'</code>
+						 <code>'mouseover'</code>
+						 <code>'data-panelId'</code>
+				</p>
+			</div>
+			
+	</div>
+
+
+	</div>
+
+</body>
+</html>
