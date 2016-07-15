@@ -1,0 +1,202 @@
+<html>
+<!DOCTYPE html>    
+    <head>
+   		<title> Jquery Work - 2 smartPanels-1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Bootstrap Main CSS -->
+        <link href="css/bootstrap.css" rel="stylesheet"> 
+
+        <!-- Custom CSS 
+        An example may look like this:
+
+        <link href="css/custom.css" rel="stylesheet">  
+		-->
+        <!-- Include JQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap main javascript -->
+        <script src="js/bootstrap.js"></script>
+
+        <script>
+
+            $(document).ready(function() {
+
+                $('#tooltip1').tooltip('hide');
+                $('#tooltip2').tooltip('hide');      
+
+                /* Adding user defined jQuery events starts here */
+
+
+                // this is where we make the panels smarter. Here we will use 'this' to select each panel event when clicked
+
+                $('.smartPanel').on('click', function() { 
+                	/* 
+                	
+                	smartPanel is a class common to all the buttons and the panel they connect to.
+                	
+                	smartPanel class helps to establish a relationship a connection between all these buttons and panels respectively
+                	
+                	Using data-id attribute. 
+                	
+                	Creating a variable panelId to store the current button info using this 
+                	
+                	data-id attribute can be named anything as demonstrated at two different places by creating 'data-panelid' and 'data-togglePanels'. 
+
+                	data-id should match the name of id of the divs we want to perform actions on/ establish relationship with. 
+                	
+                	*/
+					 
+					 var panelId = $(this).attr('data-panelid');
+					 //alert(panelId);
+					 $('#'+panelId).delay('500').slideToggle('1000');
+	                
+	                });
+
+                
+
+                // smart-panel-4 is another id to button 4 called 'Panel 4' this helps to perform further action on this button	
+        	
+                	$('#smart-panel-4').on('mouseover', function() {
+								$('#panel-4-body').html('This content is changed. Click again hide this content.');
+						/* You can use any id such as panel-4. Using that will change the entire panel with your new content inside. Example: html('You text goes here')*/
+		                });
+		                $('#smart-panel-4').on('mouseleave', function () {
+		                	$('#panel-4-body').html('Why did you go away? Click to hide this content.');
+		                })
+
+                
+
+                /* Mouseover button events using jQuery*/
+
+                $('.toggle-panels').on('mouseover', function() { 
+                	
+					 var togglepanels = $(this).attr('data-togglePanels');
+					 $('#'+togglepanels).slideToggle('500');
+	                
+	                });
+
+
+
+           }); /* ready ends here */
+
+        </script>
+    </head> 
+
+
+<body>
+	<div class="container">
+			<div class="jumbotron">
+					<h2>Basic Panel and jQuery.</h2>
+					<h3>Description: <br><br><small> Same as jQuery Work - 2 but with using a much smarter and better way to make the panels work with each Panel buttons. </small></h3>
+			</div>
+			<div>
+				<p class="lead"> Click on each panel buttons to see what happens! </p>
+				<br>
+				<!-- 
+					smartPanel is a class common to all the buttons and the panel they connect to.
+					By the way: Button as link using a href like this: <a href="" class="btn btn-link"> Link </a> 
+				 -->
+					<button class="btn btn-info smartPanel" data-panelid="btn-1"> Panel 1</button>	
+					<button class="btn btn-info smartPanel" data-panelid="btn-2"> Panel 2</button>	
+					<button class="btn btn-info smartPanel" data-panelid="btn-3"> Panel 3</button>
+					<button class="btn btn-info smartPanel" id="smart-panel-4" data-panelid="btn-4"> Panel 4</button>
+					<br><br>
+			
+			</div>
+	
+	<div class="row">
+			<div class="col-lg-3 col-md-3">
+				<div class="panel panel-primary" id="btn-1">
+					<div class="panel-heading"> Head 1</div>
+					<div class="panel-body"> Body 1 goes here</div>
+				</div>
+
+			</div>
+			<div class="col-lg-3 col-md-3">
+				<div class="panel panel-success" id="btn-2">
+					<div class="panel-heading"> Head 2</div>
+					<div class="panel-body"> Body 2 goes here </div>
+				</div>
+
+			</div>
+			<div class="col-lg-3 col-md-3">
+				<div class="panel panel-info" id="btn-3">
+					<div class="panel-heading"> Head 3</div>
+					<div class="panel-body"> Body 3 goes here</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-3">
+				<div class="panel panel-primary smart-panel-4" id="btn-4">
+					<div class="panel-heading"> Head 4</div>
+					<div class="panel-body" id="panel-4-body"> 
+						Go ahead and bring your pointer to Panel 4. Also click the rest.</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-12 col-md-9">
+				<p class="lead"> Let's do something with the panels below</p>
+					<button class="btn btn-info toggle-panels" data-togglePanels="btn-5"> Move</button>	
+					<button class="btn btn-info toggle-panels" data-togglePanels="btn-6"> Across</button>	
+					<button class="btn btn-info toggle-panels" data-togglePanels="btn-7"> These</button>
+					<button class="btn btn-info toggle-panels" data-togglePanels="btn-8"> Buttons</button>
+			<br> <br>
+
+			</div>
+
+			<!-- the panels below will do something else. -->
+
+			<div class="col-lg-3 col-md-3">
+				<div class="panel panel-info" id="btn-5">
+					<div class="panel-heading"> Head 5</div>
+					<div class="panel-body" id="panel-5-body"> Body 5.</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-3">
+				<div class="panel panel-info" id="btn-6">
+					<div class="panel-heading"> Head 6</div>
+					<div class="panel-body" id="panel-6-body"> Body 6.</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-3">
+				<div class="panel panel-info" id="btn-7">
+					<div class="panel-heading"> Head 7</div>
+					<div class="panel-body" id="panel-7-body"> Body 7.</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-3">
+				<div class="panel panel-info" id="btn-8">
+					<div class="panel-heading"> Head 8</div>
+					<div class="panel-body" id="panel-8-body"> Body 8.</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-12 col-md-9 col-xs-12">
+				<p>Events and attributes used <br>
+	   					 <code>'on'</code>
+						 <code>'click'</code>
+						 <code>'mouseover'</code>
+						 <code>'mouseleave'</code>
+						 <code>slideToggle</code>
+						 <code>data-id</code>
+
+
+
+				</p><br>
+				<p>	Result:
+					<mark> Jquery Work - 2 smartPanels-1 works much more efficient while saving over 20 lines of jQuery as compared to jQuery-work-2-smartPanels.html</mark>
+				</p>
+			</div>
+			
+	</div>
+
+
+	</div>
+
+</body>
+</html>
